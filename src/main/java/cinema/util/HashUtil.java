@@ -12,17 +12,18 @@ public class HashUtil {
     }
 
     public static String hashPassword(String password, byte[] salt) {
-        StringBuilder hashedPwd = new StringBuilder();
+        StringBuilder hashedPassword = new StringBuilder();
         try {
             MessageDigest messageDigest = MessageDigest.getInstance(HASH_ALGORITHM);
             messageDigest.update(salt);
             byte[] digest = messageDigest.digest(password.getBytes());
-            for (byte b : digest) {
-                hashedPwd.append(String.format("%02x", b));
+            for (byte byteOfPassword : digest) {
+                hashedPassword.append(String.format("%02x", byteOfPassword));
             }
-            return hashedPwd.toString();
+            return hashedPassword.toString();
         } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("Can`t hash password!", e);
+            throw new IllegalStateException("Could not create hash using " + HASH_ALGORITHM
+                    + " algorithm", e);
         }
     }
 

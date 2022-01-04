@@ -1,7 +1,6 @@
 package cinema;
 
 import cinema.exception.AuthenticationException;
-import cinema.exception.RegistrationException;
 import cinema.lib.Injector;
 import cinema.model.CinemaHall;
 import cinema.model.Movie;
@@ -69,12 +68,7 @@ public class Main {
 
         AuthenticationService authenticationService = (AuthenticationService) injector
                 .getInstance(AuthenticationService.class);
-        User user = null;
-        try {
-            user = authenticationService.register("user2@gmail.com", "qwerty");
-        } catch (RegistrationException e) {
-            System.out.println("User with this email already exists");
-        }
+        User user = authenticationService.register("user2@gmail.com", "qwerty");
 
         try {
             authenticationService.login(user.getEmail(), "qwerty");
