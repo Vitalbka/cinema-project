@@ -1,7 +1,6 @@
 package cinema.security;
 
 import cinema.exception.AuthenticationException;
-import cinema.exception.RegistrationException;
 import cinema.lib.Inject;
 import cinema.lib.Service;
 import cinema.model.User;
@@ -27,7 +26,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     }
 
     @Override
-    public User register(String email, String password) throws RegistrationException {
+    public User register(String email, String password) {
         User user = new User();
         user.setEmail(email);
         user.setPassword(password);
