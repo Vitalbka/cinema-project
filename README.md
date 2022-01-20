@@ -14,7 +14,7 @@ Here used 3-tier architecture:
 ___
 
 ## Opportunities depending on the role
-There are two roles plication:
+There are two roles application:
 - ADMIN
 - USER
 
