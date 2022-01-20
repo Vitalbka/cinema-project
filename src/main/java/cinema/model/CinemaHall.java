@@ -7,16 +7,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "cinema_halls")
+@Table(name = "cinema_hals")
 public class CinemaHall {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int capacity;
     private String description;
-
-    public CinemaHall() {
-    }
 
     public Long getId() {
         return id;
@@ -47,7 +44,6 @@ public class CinemaHall {
         return "CinemaHall{"
                 + "id=" + id
                 + ", capacity=" + capacity
-                + ", description='" + description + '\''
-                + '}';
+                + ", description='" + description + '\'' + '}';
     }
 }
