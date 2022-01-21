@@ -1,6 +1,6 @@
 ## Cinema-project
 
-This is a prototype of a web application that works like a movie theater.
+This is a prototype of a web application that works like a cinema service. Configured authorization and authentication. 
 In this application, user can have two roles `ADMIN` or `USER`.
 ___
 
@@ -46,12 +46,13 @@ The following stack of technologies was used in the project:
 * Spring Security
 * Spring Core
 * MySQL
-* Maven checkstyle plugin
+* Maven 
 ___
 ### How to start the application
 
 1. Install and Configure Apache Tomcat 9.0.50
 2. Install MySQL and Create a Schema
-4. In the db.properties change YOUR_URL, YOUR_USERNAME and YOUR_PASSWORD values
+3. In the db.properties change YOUR_URL, YOUR_USERNAME and YOUR_PASSWORD values
    to the ones you specified when installing MySQL, also change JDBC_DRIVER
+4. There is one already registered ADMIN user with username `admin@i.ua` and password `admin123` fill free to use it, or register a new user using Postman
 5. Run the application
